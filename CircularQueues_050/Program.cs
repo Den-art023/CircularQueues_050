@@ -95,5 +95,47 @@ namespace CircularQueues_050
                 Console.WriteLine();
             }
         }
+        static void Main(string[] args)
+        {
+            Queues queue = new Queues();
+            char ch;
+            while (true)
+            {
+                try
+                {
+                    Console.WriteLine("Menu");
+                    Console.WriteLine("1. Implement insert operation");
+                    Console.WriteLine("2. Implement delete operation");
+                    Console.WriteLine("3. Display values");
+                    Console.WriteLine("4. Exit");
+                    Console.Write("\nEnter your choice: ");
+                    ch = Convert.ToChar(Console.ReadLine());
+                    Console.WriteLine();
+                    switch (ch)
+                    {
+                        case '1':
+                            Console.WriteLine("Enter a number;  ");
+                            int num = Convert.ToInt32(Console.ReadLine());
+                            queue.insert(num);
+                            break;
+                        case '2':
+                            queue.remove();
+                            break;
+                        case '3':
+                            queue.display();
+                            break;
+                        case '4':
+                            return;
+                        default:
+                            Console.WriteLine("Invalid Option");
+                            break;
+                    }
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("Check for the values entered.");
+                }
+            }
+        }
     }
 }
